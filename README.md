@@ -60,11 +60,11 @@
 <!-- purchaseの外部キーカラムを追加しましょう。 -->
 <!-- このカラムを追加することで、１つの配送先情報に「誰が購入したどの商品の購入履歴情報か」を紐付けることができます。 -->
 
-
+<!-- 電話番号のカラム型は文字列型。電話番号のように先頭が0で始まるものは、整数型としますと0落ちという先頭の0が消える現象が起きるためです。 -->
 
 ### Association
 
-
+has_one :purchase
 
 
 ## purchases テーブル
@@ -77,6 +77,6 @@
 
 ### Association
 
-- has_one :product
+- belongs_to :product
 - belongs_to :user
 - has_one :delivery
