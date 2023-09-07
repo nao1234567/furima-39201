@@ -6,7 +6,7 @@
 |------------------- | --------- | ------------------------------ |
 | nickname           | string    | null: false                    |
 | encrypted_password | string    | null: false                    |   
-| mail_address       | string    | null: false, unique: true      |
+| email              | string    | null: false, unique: true      |
 | family_name        | string    | null: false                    | 
 | first_name         | string    | null: false                    |
 | family_name_kana   | string    | null: false                    |
@@ -25,7 +25,7 @@
 
 | Column             | Type       | Options                        |
 |------------------- | ---------- | ------------------------------ |
-| user_id            | references | null: false, foreign_key       |
+| user               | references | null: false, foreign_key: true |
 | name               | string     | null: false                    |
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
@@ -34,15 +34,13 @@
 | prefecture_id      | integer    | null: false                    |
 | day_id             | integer    | null: false                    |
 | price              | integer    | null: false                    |
-| commission         | integer    | null: false                    |
-| profit             | integer    | null: false                    |
 
 
 
 ### Association
 
-- has_one :purchases
-- belongs_to :users
+- has_one :purchase
+- belongs_to :user
 
 
 
@@ -50,31 +48,31 @@
 
 | Column             | Type       | Options                        |
 |------------------- | ---------- | ------------------------------ |
-| address            | integer    | null: false                    |
-| post_code          | integer    | null: false                    |
-| prefecture         | integer    | null: false                    |
+| address            | string     | null: false                    |
+| post_code          | string     | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | city               | string     | null: false                    |
-| street_address     | integer    | null: false                    |
-| building_name      | string     | null: false                    |
-| phone_number       | integer    | null: false                    |
+| street_address     | string     | null: false                    |
+| building_name      | string     |                                |
+| phone_number       | string     | null: false                    |
 
 
 
 ### Association
 
-- has_one :purchases
+- has_one :delivery
 
 
 ## purchases テーブル
 
 | Column             | Type       | Options                        |
 |------------------- | ---------- | ------------------------------ |
-| user_id            | references | null: false, foreign_key       |
-| purchase_id        | references | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| product            | references | null: false, foreign_key: true |
 
 
 ### Association
 
-- has_one :deliveries
-- has_one :products
-- belongs_to :users
+- has_one :delivery
+- has_many :purchases
+- belongs_to :user
