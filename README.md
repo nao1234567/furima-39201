@@ -32,7 +32,7 @@
 | description        | text       | null: false                    |
 | cost_id            | integer    | null: false                    |
 | prefecture_id      | integer    | null: false                    |
-| day_id             | integer    | null: false                    |
+| shipping_date_id   | integer    | null: false                    |
 | price              | integer    | null: false                    |
 
 
@@ -53,14 +53,18 @@
 | prefecture_id      | integer    | null: false                    |
 | city               | string     | null: false                    |
 | street_address     | string     | null: false                    |
-| building_name      | string     |                                |
+| purchase           | references | null: false, foreign_key: true |
+| building_name      | string     | null: false                    |
 | phone_number       | string     | null: false                    |
+
+<!-- purchaseの外部キーカラムを追加しましょう。 -->
+<!-- このカラムを追加することで、１つの配送先情報に「誰が購入したどの商品の購入履歴情報か」を紐付けることができます。 -->
 
 
 
 ### Association
 
-- has_one :delivery
+
 
 
 ## purchases テーブル
@@ -73,6 +77,6 @@
 
 ### Association
 
-- has_one :delivery
-- has_many :purchases
+- has_one :product
 - belongs_to :user
+- has_one :delivery

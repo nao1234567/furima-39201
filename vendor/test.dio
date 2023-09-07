@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="-XLIps--sr_vwxCd-TX6" name="ページ1">
-        <mxGraphModel dx="1234" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1177" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,13 +13,13 @@
                 <mxCell id="14" value="productsテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=16;" vertex="1" parent="1">
                     <mxGeometry x="400" y="40" width="240" height="344" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="user&#10;name&#10;category_id&#10;status_id&#10;description&#10;cost_id&#10;prefecture_id&#10;day_id&#10;price_id&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=19;" vertex="1" parent="14">
+                <mxCell id="15" value="user&#10;name&#10;category_id&#10;status_id&#10;description&#10;cost_id&#10;prefecture_id&#10;shipping_date_id&#10;price_id&#10;" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=19;" vertex="1" parent="14">
                     <mxGeometry y="50" width="240" height="294" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="deliveriesテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=16;" vertex="1" parent="1">
                     <mxGeometry x="40" y="500" width="220" height="254" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="address&#10;post_code&#10;prefecture&#10;city&#10;street_address&#10;building_name&#10;phone_number" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=19;" vertex="1" parent="18">
+                <mxCell id="19" value="address&#10;post_code&#10;prefecture_id&#10;city&#10;street_address&#10;building_name&#10;phone_number" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=19;" vertex="1" parent="18">
                     <mxGeometry y="50" width="220" height="204" as="geometry"/>
                 </mxCell>
                 <mxCell id="27" value="purchasesテーブル" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=16;" vertex="1" parent="1">
