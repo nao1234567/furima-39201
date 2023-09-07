@@ -64,7 +64,7 @@
 
 ### Association
 
-has_one :purchase
+ belongs_to :purchase
 
 
 ## purchases テーブル
@@ -80,3 +80,5 @@ has_one :purchase
 - belongs_to :product
 - belongs_to :user
 - has_one :delivery
+
+<!-- 1人のユーザーと1つのツイートに所属するので、belongs_to :モデル単数形 -->
