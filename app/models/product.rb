@@ -26,6 +26,6 @@ class Product < ApplicationRecord
   validates :shipping_date_id, numericality: { other_than: 1, message: "can't be blank" }
 
   VALID_PRICEL_HALF = /\A[0-9]+\z/
-  validates :price, presence: true, format: { with: VALID_PRICEL_HALF }, numericality: { only_integer: true,
-                                                                                         greater_than: 300, less_than: 9_999_999 }
+  validates :price, presence: true, numericality: { only_integer: true,
+                                                    greater_than: 299, less_than: 10_000_000 }
 end
