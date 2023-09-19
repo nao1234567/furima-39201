@@ -32,7 +32,7 @@ m = Module.new do
       end
       next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/
       bundler_version = $1
-      update_index = i
+       = i
     end
     bundler_version
   end
