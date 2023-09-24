@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
+
   validates :nickname, presence: true
   validates :birth_day, presence: true
 
@@ -21,6 +23,6 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: 'には半角の英字と数字の両方を含めて設定してください'
 
   has_many :products
-  # has_many :purchases
-  # 後での実装流れが思い出しやすいように、そして入力漏れを防ぐためにコメントをしています。
+  has_many :purchases
+ 
 end
