@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2023_09_20_110858) do
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "street_address", null: false
-    t.string "building_name", null: false
+    t.string "building_name"
     t.string "phone_number", null: false
     t.bigint "purchase_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 2023_09_20_110858) do
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "product_id"
-    t.bigint "user_id"
+    t.bigint "product_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_purchases_on_product_id"
@@ -116,4 +116,6 @@ ActiveRecord::Schema.define(version: 2023_09_20_110858) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "deliveries", "purchases"
   add_foreign_key "products", "users"
+  add_foreign_key "purchases", "products"
+  add_foreign_key "purchases", "users"
 end
