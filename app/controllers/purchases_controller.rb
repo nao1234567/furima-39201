@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
-  before_action :set_product, only: [:index, :create ]
+  before_action :authenticate_user!, only: [:index]
+  before_action :set_product, only: [:index, :create]
 
   def index
     @purchase_delivery = PurchaseDelivery.new
@@ -15,7 +16,6 @@ class PurchasesController < ApplicationController
       @purchase_delivery.save
       return redirect_to root_path 
     else
-      @product = Product.find(params[:product_id])
       render :index
     end
   end
