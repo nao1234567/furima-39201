@@ -1,11 +1,14 @@
 class PurchasesController < ApplicationController
+  before_action :set_product, only: [:index, :create ]
+
   def index
-    @product = Product.find(params[:product_id])
     @purchase_delivery = PurchaseDelivery.new
+    if current_user == @product.user || @product.purchase.present?
+       redirect_to root_path
+      end
   end
 
   def create
-    @product = Product.find(params[:product_id])
     @purchase_delivery = PurchaseDelivery.new(purchase_params)
     if @purchase_delivery.valid?
       pay_product
@@ -33,6 +36,8 @@ class PurchasesController < ApplicationController
     )
   end
 
-
+  def set_product
+    @product = Product.find(params[:product_id])
+  end
 
 end
